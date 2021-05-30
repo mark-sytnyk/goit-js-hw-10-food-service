@@ -15,7 +15,7 @@ const Theme = {
 
 
   function onCheckboxClick (evt) {
-    if (btnTgl.checked) {
+    if (buttonToggle.checked) {
     body.classList.add(Theme.DARK)
     body.classList.remove(Theme.LIGHT)
     localStorage.setItem('theme', 'dark')

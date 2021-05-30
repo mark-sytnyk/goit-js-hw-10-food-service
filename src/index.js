@@ -5,7 +5,7 @@ import menuTemplate from './menuItem.hbs';
 const menuRef = document.querySelector('.js-menu')
 const createMenuItem = menuTemplate(menu)
 menuRef.insertAdjacentHTML('afterbegin', createMenuItem)
-const btnTgl = document.querySelector('.theme-switch__toggle')
+const buttonToggle = document.querySelector('.theme-switch__toggle')
 const body = document.querySelector('body')
 const Theme = {
     LIGHT: 'light-theme',
@@ -14,7 +14,7 @@ const Theme = {
 
 
 
-  function qqq (evt) {
+  function onCheckboxClick (evt) {
     if (btnTgl.checked) {
     body.classList.add(Theme.DARK)
     body.classList.remove(Theme.LIGHT)
@@ -27,16 +27,16 @@ const Theme = {
     
     }
   }
- btnTgl.addEventListener('change', qqq)
+  buttonToggle.addEventListener('change', onCheckboxClick)
 
 
 
- const tyuiop = localStorage.getItem('theme')
- if (tyuiop === 'dark') {
+ const bodyTheme = localStorage.getItem('theme')
+ if (bodyTheme === 'dark') {
     body.classList.add(Theme.DARK)
     body.classList.remove(Theme.LIGHT)
-    btnTgl.checked = true
- } else if (tyuiop === 'light') {
+    buttonToggle.checked = true
+ } else if (bodyTheme === 'light') {
     body.classList.add(Theme.LIGHT)
     body.classList.remove(Theme.DARK)
  }
